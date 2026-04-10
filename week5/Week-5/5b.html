@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px; 
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 80px); 
+            border: none;
+        }
+
+        img{
+            display:block;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar" style="display: flex;justify-content: center;gap: 20px;padding:20px ;">
+        <a href="5b home.html" target="contentFrame" style="background-color: bisque;  font-size:24px;"><b>Home</b></a>
+        <a href="5b about.html" target="contentFrame" style="background-color: bisque;  font: size 24px;"><b>About</b></a>
+        <a href="5b contact.html" target="contentFrame" style="background-color: bisque;  font-size:24px;"><b>Contact</b></a>
+    </div>
+
+    <iframe name="contentFrame" src="5b home.html"></iframe>
+
+</body>
+</html>
