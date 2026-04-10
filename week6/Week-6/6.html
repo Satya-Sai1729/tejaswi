@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    display:grid;
+    grid-template-rows:auto auto 1fr auto;
+    grid-template-columns:300px 1fr;
+    grid-template-areas:
+        "header header"
+        "sale sale"
+        "sidebar products"
+        "footer footer";
+    padding:10px;
+    gap:10px;
+    height:100vh;
+    border:3px solid black;
+}
+
+.header{
+    grid-area:header;
+    background-color:gold;
+    color:rgb(1,1,30);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    font-size:larger;
+    border:3px solid black;
+}
+
+.sale{
+    grid-area:sale;
+    background-color:blue;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    font-size:larger;
+    border:3px solid black;
+    text-align:center;
+}
+
+.sidebar{
+    grid-area:sidebar;
+    background-color:white;
+    padding:20px;
+    font-size:larger;
+    border:3px solid black;
+}
+
+.sidebar h3{
+    margin-top:0;
+}
+
+.products{
+    grid-area:products;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    padding:20px;
+    border:3px solid black;
+}
+
+.products div{
+    border:2px solid black;
+    padding:10px;
+    text-align:center;
+}
+
+.footer{
+    grid-area:footer;
+    background-color:red;
+    color:white;
+    text-align:center;
+    font-size:larger;
+    padding:10px;
+    border:3px solid black;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header" style="font-family: Georgia, 'Times New Roman'">
+        TREND HUB – Your One-Stop Shopping Destination
+    </div>
+
+    <div class="sale">
+        Ultimate Savings Event – Up to 50% OFF | While Stocks Last!<br>
+        Limited Time Deal – Grab Your Favorites Before They’re Gone!
+    </div>
+
+    <div class="sidebar">
+        <h3>Categories</h3>
+        * Electronics<br><br>
+        * Home Appliances<br><br>
+        * Books<br><br>
+        * Clothing
+    </div>
+
+    <div class="products">
+
+        <div>
+            <img src="berserk.jpg" height="100" width="100">
+            <h3>Berserk Book</h3>
+            <p>Price: $34.56</p>
+        </div>
+
+        <div>
+            <img src="tab.webp" height="100" width="100">
+            <h3>Tablet</h3>
+            <p>Price: $5.89</p>
+        </div>
+
+        <div>
+            <img src="tv.webp" height="100" width="100">
+            <h3>Television</h3>
+            <p>Price: $30.00</p>
+        </div>
+
+        <div>
+            <img src="digi.webp" height="100" width="100">
+            <h3>Watch</h3>
+            <p>Price: $4.56</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Thank You for Shopping with TREND HUB!<br>
+        © 2026 AmritaStore. All Rights Reserved.
+    </div>
+
+</div>
+
+</body>
+</html>
