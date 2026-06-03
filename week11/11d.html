@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                min-height:100vh;
+                margin:0;
+            }
+            input {
+                padding: 8px;
+                width: 250px;
+                margin-top: 10px;
+                border: 1px solid #0a0a0a;
+                border-radius: 10px;
+                size: 36px;
+            }
+            #msg {
+                font-size: 24px;
+                margin-top: 10px;
+                font-style: normal;
+            }
+            div{
+                justify-content:center;
+                text-align:center;
+                font-size: 36px;
+            }
+            h1{
+                text-align:center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 48px; 
+                color: #000000;   
+                text-shadow: 2px 2px 4px #000000;
+            }
+            #box {
+                border: 2px solid black;
+                margin: 20px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <h1><i>Mobile Number Validation</i></h1>
+            <div>
+                PhoneNumber:<input type="text" id="num" onblur="validatephonenumber()" placeholder="Enter 10-digit phone number"><br>
+                <p id="msg"></p>
+            </div>
+        </div>
+        <script>
+            function validatephonenumber(){
+                let phonenumber=document.getElementById("num").value;
+                let msg=document.getElementById("msg");
+                let pattern=/^[0-9]{10}$/;
+                if(phonenumber.length===0){
+                    msg.innerHTML="";
+                }
+                else if(pattern.test(phonenumber)){
+                    msg.innerHTML="valid phone number";
+                    msg.style.color="green";
+                    msg.style.fontSize="24px";
+                }
+                else{
+                    msg.innerHTML="invalid phone number(must be 10 digits)";
+                    msg.style.color="red";
+                    msg.style.fontSize="24px";
+                }
+            }
+        </script>
+    </body>
+</html>

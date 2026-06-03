@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <style>
+            body{
+                margin:10px;
+                min-height: 100vh;
+            }
+            input {
+                padding: 10px;
+                width: 500px;
+                font-size: 36px;
+                margin-top: 10px;
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+            #msg {
+                font-size: 14px;
+                margin-top: 10px;
+                font-style: normal;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            div{
+                justify-content:center;
+                text-align:center;
+                
+            }
+            h1{
+                text-align:center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 48px;
+                text-shadow: 2px 2px 4px #000000;
+                color: #890ae4;
+            }
+
+            #box {
+                border: 2px solid black;
+                margin: 20px;
+                padding: 20px;
+            }
+       </style>
+    </head>
+    <body>
+        <div id="box" >
+            <h1><i>UserName Validation Simulator </i></h1>
+            <div style="font-size: 36px;">
+                UserName: <input type="text" id="name" placeholder="Enter the username" onkeyup="validate()"><br>
+                <p id="msg"></p>
+            </div>
+        </div>
+        <script>
+            function validate(){
+                let value=document.getElementById("name").value;
+                if(value.length<5){
+                    document.getElementById("msg").innerHTML="Minimum 5 characters required";
+                    document.getElementById("msg").style.color="red";
+                    document.getElementById("msg").style.fontSize="24px";
+                }
+                else{
+                    document.getElementById("msg").innerHTML="Valid Input";
+                    document.getElementById("msg").style.color="green";
+                    document.getElementById("msg").style.fontSize="24px";
+                }
+            }
+        </script>
+
+    </body>
+</html>

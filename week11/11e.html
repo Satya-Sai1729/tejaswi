@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image:url(download\ \(14\).jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                min-height:100vh;
+                margin:0;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+            }
+            input {
+                padding: 8px;
+                width: 250px;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            #msg {
+                font-size: 14px;
+                margin-top: 10px;
+                font-style: normal;
+            }
+            div{
+                justify-content:center;
+                text-align:center;
+            }
+            form{
+                text-align:center;
+                font-size: 36px;
+            }
+            form input{
+                display:block;
+                margin:10px auto;
+                font-size: 36px;
+
+            }
+            h1{
+                text-align:center;
+                font-size: 48px;
+                color: #efd40b;
+            }
+            #box{
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border: #0f0c0c solid 6px;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <h1><i>Complete Registration Form Validation</i></h1>
+            <form onsubmit=" return validateform()">
+                Name:<input type="text" id="name" placeholder="Enter your name" style="font-size: 24px;"><br>
+                Email:<input type="text" id="email" placeholder="Enter your email" style="font-size: 24px;"><br>
+                Password:<input type="password" id="pass" placeholder="Enter your password" style="font-size: 24px;"><br>
+                <input type="submit" value="register" style="font-size: 24px;">
+            </form>
+            <p id="msg"></p>
+        </div>
+        <script>
+            function validateform(){
+                let name=document.getElementById("name").value;
+                let email=document.getElementById("email").value;
+                let password=document.getElementById("pass").value;
+                let msg=document.getElementById("msg");
+                if(name===""){
+                    msg.innerHTML="please enter your name";
+                    msg.style.color="red";
+                    return false;
+                }
+                let validateemail=/[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+                if(!validateemail.test(email)){
+                    msg.innerHTML="invalid email address";
+                    msg.style.color="red";
+                    msg.style.fontSize="28px";
+                    return false;
+                }
+                if (password.length<6){
+                    msg.innerHTML="password must conatin 6 characters";
+                    msg.style.color="red";
+                    msg.style.fontSize="28px";
+                    return false;
+                }
+                msg.innerHTML="Registration  succesfully";
+                msg.style.color="green";
+                return true;
+            }
+        </script>
+    </body>
+
+</html>
